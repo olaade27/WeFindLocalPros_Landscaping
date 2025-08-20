@@ -32,14 +32,14 @@ export default function RootLayout({ children }) {
           fbq('track', 'PageView');
           `}
         </Script>
-         <noscript>
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {children}
+          <noscript>
             <img height="1" width="1" style={{display:"none"}}
             src="https://www.facebook.com/tr?id=1783002589092153&ev=PageView&noscript=1"
             />
         </noscript>
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
       </body>
     </html>
   );
