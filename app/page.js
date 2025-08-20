@@ -34,9 +34,11 @@ export default function LandingPage() {
       });
 
       if (response.ok) {
-        if (typeof fbq === "function") {
-          fbq("track", "Lead");
-        }
+       fbq("track", "Lead", {
+          service: formData.service,
+          value: 1,          // optional
+          currency: "CAD",   // optional
+        });
         alert("✅ Your request has been submitted!");
         setFormData({ name: "", email: "", phone: "", service: "", details: "" });
       } else {
