@@ -34,6 +34,9 @@ export default function LandingPage() {
       });
 
       if (response.ok) {
+        if (typeof fbq === "function") {
+          fbq("track", "Lead");
+        }
         alert("✅ Your request has been submitted!");
         setFormData({ name: "", email: "", phone: "", service: "", details: "" });
       } else {
@@ -179,7 +182,7 @@ export default function LandingPage() {
               <option value="hedge">Hedge Trimming</option>
               <option value="cleanup">Yard Cleanup</option>
               <option value="landscape">Full Landscaping</option>
-              <option value="other">Other</option> {/* Added Other */}
+              <option value="other">Other</option> 
             </select>
             <textarea
               name="details"
