@@ -18,8 +18,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>We Find Local Pros</title>
         <link rel="icon" href="/favicon.png"/>
-      </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
 
         <Script id="facebook-pixel" strategy="afterInteractive">
@@ -42,6 +41,7 @@ export default function RootLayout({ children }) {
             />
         </noscript>
       </body>
+      </head>
     </html>
   );
 }
