@@ -18,10 +18,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>We Find Local Pros</title>
         <link rel="icon" href="/favicon.png"/>
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
-
-        <Script id="facebook-pixel" strategy="afterInteractive">
+         <Script id="facebook-pixel" strategy="afterInteractive">
           {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -40,8 +37,10 @@ export default function RootLayout({ children }) {
             src="https://www.facebook.com/tr?id=1783002589092153&ev=PageView&noscript=1"
             />
         </noscript>
-      </body>
       </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
