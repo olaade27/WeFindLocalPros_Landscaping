@@ -34,11 +34,15 @@ export default function LandingPage() {
       });
 
       if (response.ok) {
-       fbq("track", "Lead", {
-          service: formData.service,
-          value: 1,          // optional
-          currency: "CAD",   // optional
-        });
+       if (typeof window !== "undefined" && typeof window.fbq === "function") {
+          window.fbq("track", "Lead", {
+            service: formData.service,
+            value: 1,
+            currency: "CAD",
+          });
+       } else {
+          console.warn("⚠️ fbq not found");
+       }
         alert("✅ Your request has been submitted!");
         setFormData({ name: "", email: "", phone: "", service: "", details: "" });
       } else {
